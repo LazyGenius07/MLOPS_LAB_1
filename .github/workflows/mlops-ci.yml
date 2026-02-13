@@ -1,0 +1,28 @@
+name: MLOps CI
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  run-app:
+    runs-on: ubuntu-latest
+
+    container:
+      image: python:3.11-alpine   # very lightweight image with Python preinstalled
+
+    env:
+      STUDENT_NAME: Test User
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install dependencies (if any)
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install --no-cache-dir -r requirements.txt
+          fi
+      - name: Run app
+        run: python src/demo/app.py
