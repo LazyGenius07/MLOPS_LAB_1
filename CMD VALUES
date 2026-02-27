@@ -1,0 +1,16 @@
+docker run -it --rm -v C:\Users\Admin\Downloads\MLOPS_LAB_1-main\MLOPS_LAB_1-main:/workspace -w /workspace python:3.11 bash
+
+
+
+whoami
+ls
+pwd
+which python
+make setup
+make run
+make run
+export STUDENT_NAME
+export STUDENT_NAME=D M ABDUL RAZZAQ
+make run
+export STUDENT_NAME="D M ABDUL RAZZAQ"
+make run
